@@ -12,7 +12,9 @@ import java.util.Map;
 public class ConfigController {
     @Value(value = "${spring.application.name}")
     private String appName;
-    @Value(value = "${spring.application.index}")
+    @Value(value = "#{'${spring.application.name}'.length()}")
+    private int appNameLength;
+    @Value(value = "${spring.application.index:0}")
     private String appIndex;
 
     @RequestMapping(value = "config")
@@ -20,6 +22,8 @@ public class ConfigController {
         Map<String, Object> map = new HashMap<>();
         map.put("appName", appName);
         map.put("appIndex", appIndex);
+        map.put("appNameLength", appNameLength);
+
 
         return new ResMsg(map);
     }
