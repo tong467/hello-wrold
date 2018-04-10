@@ -6,11 +6,17 @@ public class ResMsg<T> {
     private String msg;
     private T data;
 
-    public ResMsg(){
+    public ResMsg() {
         code = 0;
         msg = "成功";
     }
-    
+
+    public ResMsg(T data) {
+        code = 0;
+        msg = "成功";
+        this.data = data;
+    }
+
     public int getCode() {
         return code;
     }
