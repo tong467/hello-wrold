@@ -1,6 +1,8 @@
 package com.tong467.hellowrold.web.controller;
 
+import com.tong467.hellowrold.entity.ApplicationConfig;
 import com.tong467.hellowrold.entity.ResMsg;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,6 +19,9 @@ public class ConfigController {
     @Value(value = "${spring.application.index:0}")
     private String appIndex;
 
+    @Autowired
+    private ApplicationConfig config;
+
     @RequestMapping(value = "config")
     private ResMsg getConfig() {
         Map<String, Object> map = new HashMap<>();
@@ -24,7 +29,13 @@ public class ConfigController {
         map.put("appIndex", appIndex);
         map.put("appNameLength", appNameLength);
 
-
         return new ResMsg(map);
     }
+
+
+    @RequestMapping(value = "config1")
+    private ResMsg getConfig1() {
+        return new ResMsg(config);
+    }
+
 }
