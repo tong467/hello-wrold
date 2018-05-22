@@ -20,7 +20,7 @@ public class Goods {
     /**
      * 状态
      */
-    private String status;
+    private Integer status;
     /**
      * 创建时间
      */
@@ -67,11 +67,11 @@ public class Goods {
         this.describe = describe;
     }
 
-    public String getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 

@@ -40,4 +40,5 @@ public class ResMsg<T> {
     public void setData(T data) {
         this.data = data;
     }
+
 }

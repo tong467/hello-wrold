@@ -1,5 +1,3 @@
-DROP TABLE Goods;
-
 CREATE TABLE `goods` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(20) NOT NULL DEFAULT '' COMMENT '商品名',
@@ -10,4 +8,4 @@ CREATE TABLE `goods` (
   `updateTime` int(11) DEFAULT '0' COMMENT '更新时间',
   `userId` int(11) NOT NULL COMMENT '操作人',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
